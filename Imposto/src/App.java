@@ -31,8 +31,14 @@ public class App {
             }
         }
         System.out.println("\nContribuintes :");
+        double somaTotal = 0.0;
         for(Contribuinte contribuinte : lista){
-            System.out.println("Nome: "+contribuinte.getNome()+" Impostos a pagar R$"+contribuinte.CalculoImposto());
+
+            double imposto = contribuinte.CalculoImposto();
+            System.out.println("Nome: "+contribuinte.getNome()+" Impostos a pagar R$"+ imposto);
+
+            somaTotal += imposto; 
         }
+        System.out.println("Total impostos: "+somaTotal);
     }
 }
